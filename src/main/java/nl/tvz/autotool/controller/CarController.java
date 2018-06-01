@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
+@RequestMapping(path = "/")
 public class CarController {
 
 
@@ -22,7 +23,7 @@ public class CarController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/carfactory")
-    public void setCarFactoryInfo(CarFactoryInfo carFactoryInfo){
+    public void setCarFactoryInfo(@RequestParam CarFactoryInfo carFactoryInfo){
        carFactoryInfoRepository.save(carFactoryInfo);
     }
 
